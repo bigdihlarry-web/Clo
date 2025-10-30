@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clo - Dice Duel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎲 Dice Duel 🎲</h1>
+      <p class="subtitle">A strategic dice game for two players</p>
+    </header>
+
+    <div class="game-info">
+      <div class="round-info">
+        <span class="label">Round:</span>
+        <span id="roundNum" class="value">0</span>
+      </div>
+      <div class="messages-box">
+        <p id="messages">Click "Pre-roll" to determine who goes first.</p>
+      </div>
+    </div>
+
+    <div class="game-board">
+      <div class="player-section player-1">
+        <h2>Player 1</h2>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Pre-roll:</span>
+            <span id="p1Pre" class="stat-value">—</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Last Roll:</span>
+            <span id="p1RollText" class="stat-value">—</span>
+          </div>
+        </div>
+        <button id="p1RollBtn" class="roll-btn" disabled>Roll Dice</button>
+      </div>
+
+      <div class="divider">VS</div>
+
+      <div class="player-section player-2">
+        <h2>Player 2</h2>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-label">Pre-roll:</span>
+            <span id="p2Pre" class="stat-value">—</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Last Roll:</span>
+            <span id="p2RollText" class="stat-value">—</span>
+          </div>
+        </div>
+        <button id="p2RollBtn" class="roll-btn" disabled>Roll Dice</button>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="preRollBtn" class="control-btn primary">Pre-roll</button>
+      <button id="resetBtn" class="control-btn secondary">Reset Game</button>
+      <button id="cheatBtn" class="control-btn cheat">🎭 Cheat</button>
+    </div>
+
+    <div class="result-section">
+      <h3>Round Result</h3>
+      <p id="roundResult" class="result-text">—</p>
+    </div>
+
+    <div class="rules">
+      <h3>Game Rules</h3>
+      <ul>
+        <li><strong>Pre-roll:</strong> Each player rolls one die. Highest roll goes first.</li>
+        <li><strong>Main Roll:</strong> Players take turns rolling three dice.</li>
+        <li><strong>4-5-6:</strong> Instant win!</li>
+        <li><strong>1-2-3:</strong> Instant lose!</li>
+        <li><strong>Triple 1:</strong> Both players re-roll the round.</li>
+        <li><strong>Triples:</strong> Three of a kind (ranked by number).</li>
+        <li><strong>Pairs:</strong> Ranked by the singleton die value.</li>
+        <li><strong>Singles:</strong> Ranked by highest die value.</li>
+        <li><strong>Ties:</strong> Both players re-roll the round.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
